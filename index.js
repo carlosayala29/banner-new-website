@@ -1,7 +1,3 @@
-$('.dismiss-carlos').click(function() {
-    $('.container-carlos').hide();
-}) 
-
 function storageAvailable(type) {
     let storage;
     try {
