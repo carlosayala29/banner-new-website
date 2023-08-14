@@ -1,0 +1,50 @@
+body {
+    margin: 0px;
+}
+.p-carlos {
+    margin-right: 25px;
+
+}
+.container-carlos {
+    /* Container position */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: right;
+    z-index: 1;
+
+    /* Responsiveness and sizes */
+    height: 95px;
+    width: 100vw;
+    font-size: 100%;
+
+    /* Style */
+    background-color: #212121;
+    color: white;
+    font-weight: lighter;
+    font-family: 'Montserrat', sans-serif;
+    left: 0px;
+}
+.dismiss-carlos {
+    /* Style */
+    background-color: #212121;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    margin-top: -7px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    border: none;
+
+}
+
+.dismiss-carlos:hover {
+    /*border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    border-radius: 10%;*/
+    font-size: 95%;
+    font-weight: bolder;
+    box-sizing: border-box;
+}
+
