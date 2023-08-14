@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script></script>
+</head>
+<body>
+    <a href="code.html">código</a>
+
+    <div class="container-carlos">
+        <p class="p-carlos">Hi! Welcome to our new website!</p>
+        <button class="dismiss-carlos">Dismiss</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+body {
+    margin: 0px;
+}
+.p-carlos {
+    margin-right: 25px;
+
+}
+.container-carlos {
+    /* Container position */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: right;
+    z-index: 1;
+
+    /* Responsiveness and sizes */
+    height: 95px;
+    width: 100vw;
+    font-size: 100%;
+
+    /* Style */
+    background-color: #212121;
+    color: white;
+    font-weight: lighter;
+    font-family: 'Montserrat', sans-serif;
+    left: 0px;
+}
+.dismiss-carlos {
+    /* Style */
+    background-color: #212121;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    margin-top: -7px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    border: none;
+
+}
+
+.dismiss-carlos:hover {
+    /*border-style: solid;
+    border-color: white;
+    border-width: 1px;
+    border-radius: 10%;*/
+    font-size: 95%;
+    font-weight: bolder;
+    box-sizing: border-box;
+}
+
+
+function storageAvailable(type) {
+    let storage;
+    try {
+      storage = window[type];
+      const x = "__storage_test__";
+      storage.setItem(x, x);
+      storage.removeItem(x);
+      return true;
+    } catch (e) {
+      return (
+        e instanceof DOMException &&
+        // everything except Firefox
+        (e.code === 22 ||
+          // Firefox
+          e.code === 1014 ||
+          // test name field too, because code might not be present
+          // everything except Firefox
+          e.name === "QuotaExceededError" ||
+          // Firefox
+          e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+        // acknowledge QuotaExceededError only if there's something already stored
+        storage &&
+        storage.length !== 0
+      );
+    }
+  }
+
+  if (storageAvailable("localStorage")) {
+    const savedVisibility = localStorage.getItem('containerVisibility');
+    if (savedVisibility === 'hidden') {
+    $('.container-carlos').hide();
+    }
+
+    // Dismiss button click
+    $('.dismiss-carlos').click(function() {
+        $('.container-carlos').hide();
+    // Save the visibility 
+    localStorage.setItem('containerVisibility', 'hidden');
+    }); 
+  } else {
+    $('.dismiss-carlos').click(function() {
+        $('.container-carlos').hide();
+    })
+  }
