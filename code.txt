@@ -13,12 +13,32 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script></script>
 </head>
 <body>
-    <a href="code.html">código</a>
 
+        <header class="header-container">
+            <div class="logo-container">
+                <h1 class="logo">GAMEL</h1>
+            </div>
+            <div class="toolbar-container">
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                <!--Start Dropdown Cart-->
+                <div class="dropdown-cart">
+                    <h2 class="cart-title">Tu Carrito</h2>
+                    <div class="div-line"></div>
+                    <h3 class="cart-h3">No hay productos en el carrito.</h3>
+                </div>
+                <!--End Drowpdown Cart-->
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </header>
+
+    <!--<a href="code.txt" target="_blank">código</a>-->
     <div class="container-carlos">
         <p class="p-carlos">Hi! Welcome to our new website!</p>
         <button class="dismiss-carlos">Dismiss</button>
     </div>
+
+    <script src="https://kit.fontawesome.com/88d6fa06e7.js" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
 </html>
@@ -72,6 +92,131 @@ body {
     font-size: 95%;
     font-weight: bolder;
     box-sizing: border-box;
+}
+
+/* Header CSS */
+
+.header-container {
+    margin: 0;
+
+    height: 150px;
+    width: 100vw;
+
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 100%;
+
+    border-bottom-style: solid;
+    border-bottom-color: #212121;
+
+    position: fixed;
+    top: 0;
+
+    background-color: white;
+}
+
+.logo-container {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toolbar-container {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    padding: 25%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    color: #212121;
+    font-size: 40px;
+    font-weight: 100;
+
+    position: absolute;
+    right: 45%;
+}
+
+.dropdown-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 20vh;
+    width: 26vw;
+    min-height: 75px;
+    min-width: 270px;
+
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+
+    border-radius: 5%;
+    border-style: solid;
+    border-color: #212121;
+    border-width: 0.5px;
+
+    background-color: white;
+
+    padding: 1.5%;
+
+    box-sizing: border-box;
+
+    display: none;
+}
+
+.div-line {
+    width: 100%;
+
+    border-style: dotted;
+    border-width: 0.10px;
+    border-color: #212121;
+}
+
+.cart-title {
+    font-size: 130%;
+    font-family: 'Montserrat', sans-serif;
+    color: #212121;
+    font-weight: 478;
+}
+
+.cart-h3 {
+    font-size: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: #212121;
+    font-weight: 340;
+}
+
+
+.cart-icon:hover + .dropdown-cart,
+  .dropdown-cart:hover {
+    display: block;
+  }
+  
+  .dropdown-cart {
+    display: none;
+  }
+
+@media only screen and (max-width: 600px) {
+    .toolbar-container {  
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
 }
 
 
